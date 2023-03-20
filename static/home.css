@@ -1,0 +1,7 @@
+nav{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height:auto;
+    padding: 30%;
+}

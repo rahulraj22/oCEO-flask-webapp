@@ -1,0 +1,47 @@
+<style>
+  th,
+  td {
+      padding: 10px;
+      border: 1px solid black;
+  }
+  
+  /* Style the th elements */
+  th {
+      background-color: #ddd;
+  }
+  
+  input{
+      width: 200%;
+      height: 100%;
+  }
+  </style>
+
+
+<table border = 1>
+ <thead>
+   <tr>
+    <th> ID</th>
+    <th>Email id </th>
+    <th>Name</th>
+    <th>Discipline</th>
+    <th>Department</th>
+    <th>Cpi</th>
+    <th>pswd</th>
+   </tr>
+ </thead>
+
+<table border = 1>
+    {% for student in userDetails %}
+  <tbody>
+    <tr>
+      <td> {{student[0]}} </td>
+      <td> {{student[1]}} </td>
+      <td> {{student[2]}} </td>
+      <td> {{student[3]}} </td>
+      <td> {{student[4]}} </td>
+      <td> {{student[5]}} </td>
+      <td> {{student[6]}} </td>
+    </tr>
+    {% endfor %}
+  </tbody>>
+  </table> 

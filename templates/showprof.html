@@ -1,0 +1,49 @@
+<style>
+  th,
+  td {
+      padding: 10px;
+      border: 1px solid black;
+  }
+  
+  /* Style the th elements */
+  th {
+      background-color: #ddd;
+  }
+  
+  input{
+      width: 200%;
+      height: 100%;
+  }
+  </style>
+
+<table border = 1>
+  <tr>
+    <th>Job ID</th>
+    <th>Employee Name</th>
+    <th>Employee Id</th>
+    <th>Activity</th>
+    <th>Job desc</th>
+    <th>Pre requiusite</th>
+    <th>Eligibility</th>
+    <th>total job</th>
+    <th>Duration</th>
+    <th>App status</th>
+   
+  </tr>
+    {% for professor in userDetails %}
+    <tr>
+      <td> {{professor[0]}} </td>
+      <td> {{professor[1]}} </td>
+      <td> {{professor[2]}} </td>
+      <td> {{professor[3]}} </td>
+      <td> {{professor[4]}} </td>
+      <td> {{professor[5]}} </td>
+      <td> {{professor[6]}} </td>
+      <td> {{professor[7]}} </td>
+      <td> {{professor[8]}} </td>
+      <td> {{professor[9]}} </td>
+    
+   
+    </tr>
+    {% endfor %}
+  </table> 
