@@ -97,9 +97,20 @@ a flask webapp for performing INSERT, UPDATE, DELETE, RENAME, WHERE operations i
 ![image](https://user-images.githubusercontent.com/74257754/226423579-ee768e02-4ff9-48a4-be0e-09cf5a4a84c6.png)
    - deletion operation on table showing Dynamic Execution
 
-## INSERT operation :-
-![image](https://user-images.githubusercontent.com/74257754/226428339-0b86293d-f3b5-4b32-9045-ceb48e4507cb.png)
-   - After insertion, user is redirected to login page
+## INSERT operation (for student Registration):-
+![image](https://user-images.githubusercontent.com/74257754/226884307-5fb107ec-7330-414a-bda7-1a39b96b1308.png)
+   - These data of student will be stored in student table in oceo database
+![image](https://user-images.githubusercontent.com/74257754/226884890-bba78953-22b4-4c42-bd3a-73db29b92dfb.png)
+   - Student will be prompted with "Student Login" page as shown below
+![image](https://user-images.githubusercontent.com/74257754/226886297-3c41dd51-88d3-4372-88dd-dfb30455a22b.png)
+   - The updated data can be viewed from mySQL Workbench
+
+### Here are some of the dummy data used for testing our webApps shown below :-
+![image](https://user-images.githubusercontent.com/74257754/226887015-83e72e26-c6f4-41e7-a470-6590dd0cc1b1.png)
+![image](https://user-images.githubusercontent.com/74257754/226887039-261f59e9-2862-4a4f-a2a8-5dbddf07d8e2.png)
+![image](https://user-images.githubusercontent.com/74257754/226887078-12b04652-03cb-4312-b976-f7fa3c1a1b1f.png)
+![image](https://user-images.githubusercontent.com/74257754/226887121-005a9387-c097-41d9-bccc-9d17c9e1e595.png)
+
 
 ## If login details is wrong :-
 ![image](https://user-images.githubusercontent.com/74257754/226431207-3265b7ec-577e-45b1-a3cc-4676681aa8b0.png)
