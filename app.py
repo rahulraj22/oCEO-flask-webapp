@@ -27,8 +27,8 @@ mysql = MySQL(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def student():
-    userDetails = request.form
     if request.method == 'POST':
+        userDetails = request.form
         if userDetails['action'] == 'Register':
             # Fetch form data
             num = userDetails['num']
@@ -48,7 +48,7 @@ def student():
             return redirect('/show')
         elif userDetails['action'] == 'Admin-Sign-In':
             return redirect('/test')
-        elif userDetails['action'] == 'Prof-Sign-In':
+        elif userDetails['action'] == 'Prof-Register':
             return redirect('/prof')
 
     # elif request.method == 'POST' and userDetails['num'] == '':
@@ -77,6 +77,8 @@ def show():
             userDetails = cur.fetchall()
             # return redirect('showprof.html')
             return render_template('show.html', userDetails=userDetails)
+        else:
+            return render_template('message.html')
         mysql.connection.commit()
         cur.close()
 
@@ -151,18 +153,21 @@ def prof():
     if request.method == 'POST':
         # Fetch form data
         userDetails = request.form
-        num = userDetails['num']
-        email = userDetails['email']
-        name = userDetails['name']
-        pswd = userDetails['pswd']
+        if userDetails['action'] == 'Register':
+            num = userDetails['num']
+            email = userDetails['email']
+            name = userDetails['name']
+            pswd = userDetails['pswd']
 
-        cur = mysql.connection.cursor()
-        cur.execute(
-            "INSERT INTO professor(emp_id,email,emp_name,pswd) VALUES(%s, %s, %s, %s)", (num, email, name, pswd))
-        mysql.connection.commit()
-        cur.close()
-
-        return redirect('/loginprof')
+            cur = mysql.connection.cursor()
+            cur.execute(
+                "INSERT INTO professor(emp_id,email,emp_name,pswd) VALUES(%s, %s, %s, %s)", (num, email, name, pswd))
+            mysql.connection.commit()
+            cur.close()
+            userDetails = cur.fetchall()
+            return render_template('showRegProf.html', userDetails = userDetails)
+        else:  # if professor want to login [already registered]
+            return redirect('/loginprof')
 
     return render_template('prof.html')
 
@@ -174,18 +179,27 @@ def loginprof():
     cur = mysql.connection.cursor()
 
     if request.method == 'POST':
-        resultValue = cur.execute("Select * from professor")
-        if resultValue > 0:
-            userDetails = cur.fetchone()
-            userDetails = request.form
-            email = userDetails['email']
-            pswd = userDetails['pswd']
-            cur.execute(
-                "SELECT * FROM professor WHERE email=%s AND pswd=%s", (email, pswd))
-            return redirect('/showprof')
+        # resultValue = cur.execute("Select * from professor")
+        profDetails = request.form
+        profEmail = profDetails['email']
+        profPaswd = profDetails['pswd']
+        cur = mysql.connection.cursor()
+        cur.execute('SELECT * FROM professor WHERE email = %s AND pswd = %s', (profEmail, profPaswd))
+        userDetails = cur.fetchall()
+        if userDetails:
+            # userDetails = request.form
+            # email = userDetails['email']
+            # pswd = userDetails['pswd']
+            # cur.execute(
+            #     "SELECT * FROM professor WHERE email=%s AND pswd=%s", (email, pswd))
+            # return redirect('/showprof')
+            cur.execute('SELECT emp_id, email, emp_name FROM professor')
+            allProfDetails = cur.fetchall()
+            return render_template('showRegProf.html', userDetails = userDetails, allProfDetails = allProfDetails)
         else:
-            print("login or password is incorrect, please try again")
-            return render_template('loginprof.html')
+            # print("login or password is incorrect, please try again")
+            return render_template('message.html')
+            # return render_template('loginprof.html')
 
     mysql.connection.commit()
     cur.close()
@@ -283,6 +297,17 @@ def rename():
 @app.route('/aboutus')
 def about():
     return render_template('about.html')  # about us page
+
+@app.route('/whatwedo')
+def whatwedo():
+    return render_template('index.html')
+
+@app.route('/jobopenings')
+def oceo_positions():
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM oceo_positions')
+    userDetails = cur.fetchall()
+    return render_template('showprof.html', userDetails = userDetails)
 
 if __name__ == "__main__":
     app.run(debug=True)

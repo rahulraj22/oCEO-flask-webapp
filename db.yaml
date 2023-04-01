@@ -1,5 +1,11 @@
 mysql_host: 'localhost'
 mysql_user: 'root'
 # Enter your password in field below
-mysql_password: 'root'
+mysql_password: 'Rahul@2001'
 mysql_db: 'oceo'
+
+# IMPORTANT(follow each steps below before running this webapp) :-
+
+# Create database named 'oceo' | command: create database oceo (enter)
+# run sql file named 'sample-oceo-positions.sql'
+# similarly create other tables...

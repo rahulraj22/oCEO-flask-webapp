@@ -1,1 +1,10 @@
-<h1> User id or Password is incorrect please try again </h1>
+{% extends 'base.html' %}
+{% block title %}
+Unknown user
+{% endblock title %}
+{% block body %}
+    <h1 style="color: white;"> User id or Password is incorrect please try again </h1>
+    <div class="alert alert-dark" role="alert">
+        Go back to homepage, You entered wrong credentials!! 😕
+    </div>
+{% endblock body %}

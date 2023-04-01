@@ -1,135 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/index.css') }}">
-    <title>Document</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Montserrat:wght@300;700&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about-us">About Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Login
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="loginstudent.html">Student</a></li>
-                            <li><a class="dropdown-item" href="loginprof.html">Professor</a></li>
-                            <li><a class="dropdown-item" href="adminlogin.html">Admin</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#footer">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <h1 style="text-align: center ; margin: 3%; ;">
-        oCEO Portal
+{% extends 'base.html' %}
+{% block title %}
+What we do?
+{% endblock title %}
+{% block body %}
+<h1 style="text-align: center ; margin: 3%; ;">
+    oCEO Portal
+</h1>
+<div class="container" id="about-us">
+    <h1 style="text-align: center;">
+        What we do?
     </h1>
-    <div class="container" id="about-us">
-        <h1 style="text-align: center;">
-            What we do?
-        </h1>
-        <p>
-            The “On-Campus Employment Opportunities (oCEO)” program aims to provide students with first-
-            hand employment and job experience. This program will help the students on ‘High-Quality Job experience’,
-            ‘Inculcate Higher Responsibility’, ‘Develop Leadership and Life-skills’, ‘Opportunity to
-            Earn Money' and ‘Meet Human Resource Requirements’ of the Institute. In addition, the students can
-            contribute significantly to continuing education programs and various other initiatives of the Institute.
-            The program will be open to B.Tech, and all Master Students (MSc, MA, MTech) not receiving any
-            stipend. However, Master students (MSc, MA, MTech) receiving stipend may also be considered for
-            such employment subject to exemplary performance and discharge of duties expected against the
-            payment of their stipend. Students to be engaged in oCEO activities having an academic nature, like
-            Teaching Assistant of courses, PAL, and ADH, should have a minimum CPI requirement of 7.0. For
-            other activities, there is no minimum CPI requirement.<br>
-            The selected students will be allowed to work for a maximum of 10 hours per week during the semester
-            and 40 hours per week during the vacations including mid sem breaks. The remuneration rates will be in
-            the range of 150-200 per hour and most of the students would start at the base rate and pay-hikes will be
-            based on the performance and engagement.
-            <br>
-            Any students engaged under this activity may like to mention on their CV and may use the reporting
-            officer as a reference when applying for jobs elsewhere.
-        </p>
-        <h1 style="text-align: center;">
-            The selection process
-        </h1>
-        <p>
-            Applications for available oCEO program activities are invited periodically from all B.Tech and Master
-            (MSc, MA, MTech) students through Institute Management System only and students are required to
-            apply to the interested activities through IMS. Once selected, the students are required to upload the
-            ‘oCEO Time Card’ signed by respective supervisors in IMS by 7th of every month for disbursement of
-            remuneration.
-        </p> 
-    </div>
-    <!-- footer -->
-  <section id="footer">
-    <div class="main-footer">
-        <div class="com " data-aos="fade-up">
-            <h2>Visit Us</h2>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.8694318648472!2d72.68167397488249!3d23.211428509255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2adec1f16d8d%3A0xdc447b8706689bc3!2sIndian%20Institute%20Of%20Technology%20Gandhinagar%20(IIT%20Gandhinagar)!5e0!3m2!1sen!2sin!4v1679326199271!5m2!1sen!2sin"
-                width="400" height="200" style="border:0" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="logoinfo" data-aos="fade-up">
-            
-            <div class="contact-details">
-                <h1>Contact Us</h1>
-                <li>
-                    <div class="fa fa-phone"></div><a href="tel:+919326048690">+91 7070025098</a>
-                </li>
-                <li>
-                    <div class="fa fa-envelope"></div><a href="mailto:yourmail@gmail.com">oceo36912@gmail.com</a>
-                </li>
-                </li>
-            </div>
-        </div>
-        <div class="com " data-aos="fade-up">
-          <h2 style="margin-left: 35%;">Team</h2>
-          <!-- <p style="color:white">Oracle's Eleven</p> -->
-          <ul style="color: white;">
-            <li>Harshita Ramchandani</li>
-            <li>Tanvi Jain</li>
-            <li>Ishani chogle</li>
-            <li>Tanvi Choudhary</li>
-            <li>Suhani Mittal</li>
-            <li>Rahul Raj</li>
-            <li>Chhavi Gautam</li>
-            <li>Anutosh Jaiswal</li>
-            <li>Divya Chinchole</li>
-            <li>Nitin Karkarliya</li>
-            <li>Ayush Yadav</li>
-        </ul>
-      </div>
-    </div>
-    
-    <footer>© oCEO Copyright 2023 All Rights Reserved</footer>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+    <p>
+        The “On-Campus Employment Opportunities (oCEO)” program aims to provide students with first-
+        hand employment and job experience. This program will help the students on ‘High-Quality Job experience’,
+        ‘Inculcate Higher Responsibility’, ‘Develop Leadership and Life-skills’, ‘Opportunity to
+        Earn Money' and ‘Meet Human Resource Requirements’ of the Institute. In addition, the students can
+        contribute significantly to continuing education programs and various other initiatives of the Institute.
+        The program will be open to B.Tech, and all Master Students (MSc, MA, MTech) not receiving any
+        stipend. However, Master students (MSc, MA, MTech) receiving stipend may also be considered for
+        such employment subject to exemplary performance and discharge of duties expected against the
+        payment of their stipend. Students to be engaged in oCEO activities having an academic nature, like
+        Teaching Assistant of courses, PAL, and ADH, should have a minimum CPI requirement of 7.0. For
+        other activities, there is no minimum CPI requirement.<br>
+        The selected students will be allowed to work for a maximum of 10 hours per week during the semester
+        and 40 hours per week during the vacations including mid sem breaks. The remuneration rates will be in
+        the range of 150-200 per hour and most of the students would start at the base rate and pay-hikes will be
+        based on the performance and engagement.
+        <br>
+        Any students engaged under this activity may like to mention on their CV and may use the reporting
+        officer as a reference when applying for jobs elsewhere.
+    </p>
+    <h1 style="text-align: center;">
+        The selection process
+    </h1>
+    <p>
+        Applications for available oCEO program activities are invited periodically from all B.Tech and Master
+        (MSc, MA, MTech) students through Institute Management System only and students are required to
+        apply to the interested activities through IMS. Once selected, the students are required to upload the
+        ‘oCEO Time Card’ signed by respective supervisors in IMS by 7th of every month for disbursement of
+        remuneration.
+    </p>
+</div>
+{% endblock body %}

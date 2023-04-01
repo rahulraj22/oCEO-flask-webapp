@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% block title %} Homepage {% endblock title %}
 {% block body %}
-    
+<style>
+    input{
+        padding-left: 6px;
+    }
+</style>
 <div class="container" style="width:50%">
     <h1 style="margin:10%">
         Student Login
@@ -14,27 +18,23 @@
         <br>
         <input type="text" name="name" placeholder="Name" />
         <br>
-            <input type="text" name="program" placeholder="Program" />
-            <br>
-            <input type="text" name="depname" placeholder="department name" />
-            <br>
-            <input type="text" name="cpi" placeholder="Cpi" />
-            <br>
-            <input type="password" name="pswd" placeholder="Password" />
-            <br>
-            
-            <input id="submit" type="submit" name="action" value="Register">
-            Already registered?
-            <input id="submit" type="submit" name="action" value="Sign-In">
-            Sign-In as Admin:
-            <input id="submit" type="submit" name="action" value="Admin-Sign-In">
-            Register As Prof:
-            <input id="submit" type="submit" type="submit" name="action" value="Prof-Sign-In">
-            
-        </form>
-    </div>
-    {% endblock body %}
+        <input type="text" name="program" placeholder="Program" />
+        <br>
+        <input type="text" name="depname" placeholder="department name" />
+        <br>
+        <input type="text" name="cpi" placeholder="Cpi" />
+        <br>
+        <input type="password" name="pswd" placeholder="Password" />
+        <br>
 
-</body>
+        <input id="submit" type="submit" name="action" value="Register">
+        Already registered?
+        <input id="submit" type="submit" name="action" value="Sign-In">
+        Sign-In as Admin:
+        <input id="submit" type="submit" name="action" value="Admin-Sign-In">
+        Register As Prof:
+        <input id="submit" type="submit" type="submit" name="action" value="Prof-Register">
 
-</html>
+    </form>
+</div>
+{% endblock body %}
