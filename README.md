@@ -35,7 +35,20 @@
   - Then install following pip packages :-
      - pip3 install flask-mysqldb
      - pip3 install pyyaml <br>
-     
+  - Other way(if above steps not working), Create a python virtual environment [Recommended]
+     - Go to powershell(being in project directory) and follow the below steps :-
+     1. Command: ```pip install virtualenv``` (enter)
+     2. then type ```virtualenv env``` (enter)
+        - Fig: a folder named "env" will be created[as shown] <br>
+        ![Screenshot 2023-04-01 172523](https://user-images.githubusercontent.com/74257754/229287209-5862b91a-2410-4984-a727-67482836b840.png)
+     3. Now, we have to activate this python virtual environment using command: ```.\env\Scripts\activate.ps1``` (press enter)
+        - Fig: It will show something like this
+        ![Screenshot 2023-04-01 172048](https://user-images.githubusercontent.com/74257754/229287002-89b92f89-0e6b-4692-9d5d-d0ddfbbdf944.png)
+
+     2. install python packages(flask, pyyaml, flask-mysqldb) using command: ```pip install flask pyyaml flask-mysqldb``` (enter)
+     3. Finally type command to run the flask-webapp: ```python .\app.py``` (press enter) 
+        - Fig: Server got started[running on PORT shown]
+        ![image](https://user-images.githubusercontent.com/74257754/229287434-1d1e95c6-d9a5-4a42-b937-77b3e1587e25.png)
 ## Open the oCEO-flask-webApp
   - command: python app.py (press enter)
   - then in terminal we get the ouput as shown in screenshot below <br>

@@ -1,7 +1,7 @@
 mysql_host: 'localhost'
 mysql_user: 'root'
 # Enter your password in field below
-mysql_password: 'Rahul@2001'
+mysql_password: 'Your mysql db password'
 mysql_db: 'oceo'
 
 # IMPORTANT(follow each steps below before running this webapp) :-
