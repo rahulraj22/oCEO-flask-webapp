@@ -99,12 +99,12 @@ def test():
             prgm = updatedata['prgm']
             print(prgm)
             deptname = updatedata['deptname']
-            cpi = updatedata['cpi']
-            pswd = updatedata['pswd']
+            # cpi = updatedata['cpi']
+            # pswd = updatedata['pswd']
             id = updatedata['id']
             print(id)
             # cur.execute("UPDATE table student(prgm,deptname,cpi,pswd) set VALUES(%s, %s, %s, %s)",(prgm, deptname,cpi,pswd))
-            cur.execute("UPDATE student SET program=%s, dept_name=%s, cpi=%s, pswd=%s WHERE student_id=%s", (prgm, deptname, cpi, pswd, id))
+            cur.execute("UPDATE student SET program=%s, dept_name=%s WHERE student_id=%s", (prgm, deptname, id))
             mysql.connection.commit()
             flash('updated succesfully', 'success')
             resultValue = cur.execute("Select * from student")
@@ -121,8 +121,8 @@ def test():
                 deletedata = request.form
                 id = deletedata['id']
                 deptname = deletedata['deptname']
-                cpi = deletedata['cpi']
-                pswd = deletedata['pswd']
+                # cpi = deletedata['cpi']
+                # pswd = deletedata['pswd']
                 cur.execute(
                     "DELETE FROM application WHERE student_id = %s", (id,))
                 mysql.connection.commit()
@@ -142,7 +142,7 @@ def test():
                 if resultValue > 0:
                     userDetails = cur.fetchall()
                     return render_template('test.html', userDetails=userDetails)
-
+    
     else:
         return render_template('adminlogin.html')
 
@@ -193,9 +193,14 @@ def loginprof():
             # cur.execute(
             #     "SELECT * FROM professor WHERE email=%s AND pswd=%s", (email, pswd))
             # return redirect('/showprof')
-            cur.execute('SELECT emp_id, email, emp_name FROM professor')
-            allProfDetails = cur.fetchall()
-            return render_template('showRegProf.html', userDetails = userDetails, allProfDetails = allProfDetails)
+            if profDetails['login'] == "Check Professor's Feedback":
+                cur.execute('select student_id, email, stud_name, program, dept_name, prof_feedback from student')
+                studentDetails = cur.fetchall()
+                return render_template('proffeedback.html', studentDetails = studentDetails)
+            else:
+                cur.execute('SELECT emp_id, email, emp_name FROM professor')
+                allProfDetails = cur.fetchall()
+                return render_template('showRegProf.html', userDetails = userDetails, allProfDetails = allProfDetails)
         else:
             # print("login or password is incorrect, please try again")
             return render_template('message.html')
@@ -205,6 +210,26 @@ def loginprof():
     cur.close()
 
     return render_template('loginprof.html')
+
+# update operation done by professor
+@app.route('/update/<int:sno>', methods = ['GET', 'POST'])
+def update(sno):
+    cur = mysql.connection.cursor()
+    cur.execute('select prof_feedback from student where student_id = %s', (sno, ))
+    feedbackData = cur.fetchone()
+    return render_template('updateProfMessage.html', feedbackData = feedbackData)
+
+@app.route('/delete/<int:sno>', methods = ['GET', 'POST'])
+def delete(sno):
+    cur = mysql.connection.cursor()
+    cur.execute('delete from student where student_id = %s', (sno,))
+    
+    # show an alert message to the user using the flash method
+    flash('Record deleted successfully!', 'success')
+    
+    cur.execute('select student_id, email, stud_name, program, dept_name, prof_feedback from student')
+    studentDetails = cur.fetchall()
+    return render_template('proffeedback.html', studentDetails = studentDetails)
 
 
 @app.route('/showprof', methods=['GET', 'POST'])
@@ -308,6 +333,16 @@ def oceo_positions():
     cur.execute('SELECT * FROM oceo_positions')
     userDetails = cur.fetchall()
     return render_template('showprof.html', userDetails = userDetails)
+
+
+@app.route('/proffeedback')
+def profFeedback():
+    cur = mysql.connection.cursor()
+    cur.execute('select student_id, email, stud_name, program, dept_name, prof_feedback from student')
+    studentDetails = cur.fetchall()
+    # return render_template('proffeedback.html', studentDetails = studentDetails)
+    return redirect('/prof')
+
 
 if __name__ == "__main__":
     app.run(debug=True)

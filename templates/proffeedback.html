@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+    Prof. feedback
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <h1 style="text-align: center;">Professor's Feedback to Students</h1>
+    <table class="table">
+        <thead>
+                <tr>
+                    <th scope="col">Student ID</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Program</th>
+                    <th scope="col">Dept. Name</th>
+                    <th scope="col">Professor Feedback</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for val in studentDetails %}
+                <tr>
+                    <th scope="row"> {{val[0]}} </th>
+                    <td> {{val[1]}} </td>
+                    <td> {{val[2]}} </td>
+                    <td> {{val[3]}} </td>
+                    <td> {{val[4]}} </td>
+                    <td> {{val[5]}} </td>
+                    <td>
+                        <a href="/update/{{val[0]}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Update</a>
+                        <a href="/delete/{{val[0]}}" type="button" class="btn btn-outline-danger btn-sm mx-1">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="/" type="button" class="btn btn-primary my-2">Back to Login Page</a>
+    </div>
+{% endblock body %}

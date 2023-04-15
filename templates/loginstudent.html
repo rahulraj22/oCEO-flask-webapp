@@ -3,13 +3,18 @@
   Student Login
 {% endblock title %}
 {% block body %}
+<style>
+  input{
+    padding-left: 4px;
+  }
+</style>
 <div class="container">
   <h1>
     Login
   </h1>
   <form method="POST" action="">
  
-    <input type="email" name="email" placeholder="Email" equired />
+    <input type="text" name="email" placeholder="Email" equired />
     <br>
   
   <input type="password" name="pswd" placeholder="Password " />

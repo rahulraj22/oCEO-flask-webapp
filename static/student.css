@@ -1,63 +1,75 @@
 body {
-    margin: 0px;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  margin: 0px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
 }
 
 .container {
-    background-color: rgb(255,255,255,1);
-    margin-top: 40px;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    height: 80%;
-    align-items: center;
-    border-radius: 5%;
-    margin-top: 10%;
+  background-color: rgb(255, 255, 255, 1);
+  margin-top: 40px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  height: 80%;
+  align-items: center;
+  border-radius: 5%;
+  margin-top: 10%;
 }
 
 /* Center align the form */
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Style the th and td elements */
 th,
 td {
-    padding: 10px;
-    border: 1px solid black;
+  padding: 10px;
+  border: 1px solid black;
 }
 
 /* Style the th elements */
 th {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
-input{
-    width: 200%;
-    height: 100%;
+input {
+  width: 200%;
+  height: 100%;
 }
 
-#submit{
-    background: black;
-    border:2px solid black;
-    color:white;
-    margin: 10%;
+#submit {
+  background: black;
+  border: 2px solid black;
+  color: white;
+  margin: 10%;
 
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
+body {
   font-family: 'Montserrat', sans-serif;
+
+
+  /* background Image */
+  background: rgb(2, 0, 36);
+  background-color: hsl(0, 0%, 96%);
+  /* background-image: url(../static/central_samvad_in_the_academic_spine.jpg); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(162, 121, 121, 0.5), rgba(212, 196, 196, 0.5)),
+    url("../static/home-drone.jpg");
 }
 
 .main-footer {
@@ -87,7 +99,7 @@ body{
 
 .main-footer ul li a {
   color: #ffffffcc;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 footer {
@@ -120,7 +132,7 @@ footer a {
 }
 
 .contact-details li a {
-  text-decoration:none;
+  text-decoration: none;
   color: #f1f1f1;
 }
 
@@ -129,31 +141,58 @@ footer a {
   margin-right: 10px;
 }
 
-.sociallogos{
-  padding:20px 0;
-}
-ul{
-    columns:2;
-}
-.sociallogos .logobox a{
-  padding:0 10px;
-  text-decoration:none;
-  color:#ffffff;
-  font-size:22px;
+.sociallogos {
+  padding: 20px 0;
 }
 
-.com ul li{
-  padding:5px 0;
+ul {
+  columns: 2;
 }
+
+.sociallogos .logobox a {
+  padding: 0 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.com ul li {
+  padding: 5px 0;
+}
+
+
+/* Footer Design */
+.mail {
+  height: 30px;
+  width: 30px;
+}
+
+ul a {
+  display: flex;
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+ul a:hover {
+  text-decoration: underline;
+  color: lightcoral;
+}
+
+/* ul a::after{
+  color: yellow;
+} */
+
+
 
 @media only screen and (max-width: 749px) {
   .main-footer {
-    padding:20px;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
-    .info{
-      padding:20px 0;
+
+  .info {
+    padding: 20px 0;
   }
 }
 
@@ -161,11 +200,13 @@ ul{
   .main-footer {
     grid-template-columns: 1fr;
   }
-  .sociallogos{
-    padding:20px 0;
+
+  .sociallogos {
+    padding: 20px 0;
   }
-  .com{
-    padding:20px 0;
-  } 
+
+  .com {
+    padding: 20px 0;
+  }
 
 }

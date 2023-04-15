@@ -3,20 +3,38 @@
 Admin Login
 {% endblock title %}
 {% block body %}
-
+<style>
+    input{
+        padding-left: 4px;
+    }
+</style>
 <div class="container">
     <h1>
-        Login
+        Admin Login
     </h1>
-    <form method="POST" action="">
+    <form method="POST" action="" onsubmit="return validateForm()">
 
-        Email <input type="email" name="email" value="jain01@gmail.com" required />
+        Email <input id="emaildata" type="email" name="email" value="" required />
         <br>
 
-        Password <input type="password" name="pswd" value="12345" />
+        Password <input id="passData" type="password" name="pswd" value="" />
         <br>
 
         <input type="submit" name="login" value="Login" id="submit">
     </form>
+    <script>
+        // Validity checks :-   | Front-end attacks- resolved here
+        function validateForm() {
+            let emailData = document.getElementById('emaildata').value;
+            let passData = document.getElementById('passData').value;
+            
+            if (emailData === "jain01@gmail.com" && passData === "12345" || emailData === "raj.rahul@iitgn.ac.in" && passData === "12345") {
+                return true; // allow form submission
+            } else {
+                alert("Please enter the correct Details."); // display error message
+                return false; // prevent form submission
+            }
+        }
+    </script>
 </div>
 {% endblock body %}

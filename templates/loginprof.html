@@ -2,8 +2,14 @@
 {% block title %}
 Professor Login
 {% endblock title %}
-{% block body %}
 
+
+{% block body %}
+<style>
+    input{
+        padding-left: 4px;
+    }
+</style>
 <div class="container" style="width: 40%;">
     <h1>
         Login
@@ -16,6 +22,7 @@ Professor Login
         Password <input type="password" name="pswd" />
         <br>
 
+        <input id="submit" type="submit" name="login" value="Check Professor's Feedback">
         <input id="submit" type="submit" name="login" value="Login">
     </form>
 </div>

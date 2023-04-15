@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='/about.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="../static/secure-db-logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/39de6b7b39.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -25,8 +26,7 @@
                         <img src="../static/secure-db-logo.png" alt="" style="width: 40px;">
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                            href="/">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/aboutus">About Us</a>
@@ -40,6 +40,24 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/jobopenings">oCEO Positions</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/proffeedback">Prof. feedback</a>
+                    </li>
+
+                    <!-- DropDown for login -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin & Prof. Login
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/test">Admin Login</a></li>
+                            <li><a class="dropdown-item" href="/prof">Prof. Login</a></li>
+                            <!-- <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -65,10 +83,10 @@
                 <div class="contact-details">
                     <h1>Contact Us</h1>
                     <li>
-                        <div class="fa fa-phone"></div><a href="tel:+919326048690">+91 7070025098</a>
+                        <div class="fa fa-phone"></div><a href="tel:+919326048690">+919326048690</a>
                     </li>
                     <li>
-                        <div class="fa fa-envelope"></div><a href="mailto:yourmail@gmail.com">oceo36912@gmail.com</a>
+                        <div class="fa fa-envelope"></div><a href="mailto:yourmail@gmail.com">oceo.2023@iitgn.ac.in</a>  <!-- oceo36912@gmail.com -->
                     </li>
                     </li>
                 </div>
@@ -77,17 +95,28 @@
                 <h2 style="margin-left: 35%;">Team</h2>
                 <!-- <p style="color:white">Oracle's Eleven</p> -->
                 <ul style="color: white;">
-                    <li>Harshita Ramchandani</li>
-                    <li>Tanvi Jain</li>
-                    <li>Ishani chogle</li>
-                    <li>Tanvi Choudhary</li>
-                    <li>Suhani Mittal</li>
-                    <li>Rahul Raj</li>
-                    <li>Chhavi Gautam</li>
-                    <li>Anutosh Jaiswal</li>
-                    <li>Divya Chinchole</li>
-                    <li>Nitin Karkarliya</li>
-                    <li>Ayush Yadav</li>
+                    <a href="mailto:chhavi.gautam@iitgn.ac.in"><img class="mail" src="../static/icons8-mail-48.png"
+                            alt="n"> Chavi Gautam</a>
+                    <a href="mailto:suhani.mittal@iitgn.ac.in"><img class="mail" src="../static/icons8-mail-48.png"
+                            alt="n"> Suhani Mittal</a>
+                    <a href="mailto:chaudhari.tanvi@iitgn.ac.in"><img class="mail" src="../static/icons8-mail-48.png"
+                            alt="n"> Tanvi Chaudhari </a>
+                    <a href="mailto:chogle.ishani@iitgn.ac.in"><img class="mail" src="../static/icons8-mail-48.png"
+                            alt="n"> Ishani Chogle</a>
+                    <a href="mailto:harshita.ramchandani@iitgn.ac.in"><img class="mail"
+                            src="../static/icons8-mail-48.png" alt="n"> Harshita Ramachandani</a>
+                    <a href="mailto:jain.tanvi@iitgn.ac.in"><img class="mail" src="../static/icons8-mail-48.png"
+                            alt="n"> Tanvi Jain</a>
+                    <a href="mailto:ayush.yadav@iitgn.ac.in"><img class="mail" src="../static/icons8-mail-48.png"
+                            alt="n"> Ayush Yadav</a>
+                    <a href="mailto:nitin.kakraliya@iitgn.ac.in"><img class="mail" src="../static/icons8-mail-48.png"
+                            alt="n"> Nitin Kakraliya</a>
+                    <a href="mailto:rahul.raj@iitgn.ac.in"> <img class="mail" src="../static/icons8-mail-48.png"
+                            alt="n"> Rahul Raj</a>
+                    <a href="mailto:anutosh.jaiswal@iitgn.ac.in"><img class="mail" src="../static/icons8-mail-48.png"
+                            alt="n"> Anutosh Jaishawal</a>
+                    <a href="mailto:divya.chinchole@iitgn.ac.in"><img class="mail" src="../static/icons8-mail-48.png"
+                            alt="n"> Divya Chinchole</a>
                 </ul>
             </div>
         </div>
