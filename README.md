@@ -20,10 +20,10 @@
 
 ### If you are getting an error, like this!!!
 - sometime while activating python virtual env. we get an error as shown
-![image](./static/setExecution-policy-error.png)
+![image](https://github.com/rahulraj22/oCEO-flask-webapp/assets/74257754/2c0c0587-51f1-4cbd-85e6-b9b370e3c098)
 
 - to remove this, open ```windows powershell``` as ```admin``` and do as shown in Screenshot
-![image](./static/powershell-execution-policy-confirm.jpg)
+![image](https://github.com/rahulraj22/oCEO-flask-webapp/assets/74257754/cd85954f-6818-4c1a-9e09-aca3c03e672b)
 
 ### Other way(if above steps not working) :-
   - install Flask(python web framework) using the commands as shown :
